@@ -1,45 +1,149 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Animated Login Form</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login Form</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- for animation -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+
+	<!-- js -->
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
+	<div aria-live="polite" aria-atomic="true" style="position: fixed; min-height: 200px;top:20;z-index:999">
+		<!-- Position it -->
+		<div style="position: fixed; margin-top:20px; right: 20px;" id="render-toast">
+			<!-- Then put toasts within -->
+			<!-- <div class="toast animated bounceIn" role="alert" aria-live="assertive"  aria-atomic="true" style="width:300px;" data-autohide="false">
+				<div class="toast-header">
+					<img src="img/avatar.svg" class="rounded mr-2 img-20" alt="...">
+					<strong class="mr-auto">Bootstrap</strong>
+					<small class="text-muted">just now</small>
+					<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="toast-body">
+					See? Just like this.
+				</div>
+			</div> -->
+
+		
+		
+		</div>
+	</div>
 	<img class="wave" src="img/wave.png">
 	<div class="container">
+
 		<div class="img">
-			<img src="img/bg.svg">
+			<img id="img-bg" src="img/undraw_sign_in_e6hj.svg" class="">
 		</div>
 		<div class="login-content">
-			<form action="index.html">
+			<form action="index.html" id="form-login" class="form-ajax animated bounceIn">
 				<img src="img/avatar.svg">
-				<h2 class="title">Welcome</h2>
-           		<div class="input-div one">
-           		   <div class="i">
-           		   		<i class="fas fa-user"></i>
-           		   </div>
-           		   <div class="div">
-           		   		<h5>Username</h5>
-           		   		<input type="text" class="input">
-           		   </div>
-           		</div>
-           		<div class="input-div pass">
-           		   <div class="i"> 
-           		    	<i class="fas fa-lock"></i>
-           		   </div>
-           		   <div class="div">
-           		    	<h5>Password</h5>
-           		    	<input type="password" class="input">
-            	   </div>
-            	</div>
-            	<a href="#">Forgot Password?</a>
-            	<input type="submit" class="btn" value="Login">
-            </form>
-        </div>
-    </div>
-    <script type="text/javascript" src="js/main.js"></script>
+				<h3 class="title">Application Name Here</h3>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+						<h5>Username</h5>
+						<input type="text" class="input" name="username" required>
+					</div>
+				</div>
+				<div class="input-div pass">
+					<div class="i">
+						<i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+						<h5>Password</h5>
+						<input type="password" class="input" name="username" required>
+					</div>
+				</div>
+				<div style="margin-top:20px;">
+					<a href="#" id="btn-saveme" class="left"> <input type="checkbox" class="btn-save-me" name="cookie"
+							value="1"> Save Me</a>
+					<a href="#" id="btn-register" class="right btn-register">Register Here</a>
+				</div>
+				<a href="#" id="btn-forgot" class="right btn-forgot">Forgot Password?</a>
+				<input type="submit" class="btn" value="Login">
+			</form>
+
+			<form action="index.html" id="form-register" class="form-ajax  hidden animated bounceIn">
+				<h2 class="title">Register </h2>
+				<div class="register">
+					<div class="input-div one">
+						<div class="i">
+							<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+							<h5>Username</h5>
+							<input type="text" class="input" name="username" required>
+						</div>
+					</div>
+					<div class="input-div one">
+						<div class="i">
+							<i class="fas fa-envelope"></i>
+						</div>
+						<div class="div">
+							<h5>Email</h5>
+							<input type="text" class="input" name="email" required>
+						</div>
+					</div>
+					<div class="input-div pass">
+						<div class="i">
+							<i class="fas fa-lock"></i>
+						</div>
+						<div class="div">
+							<h5>Password</h5>
+							<input type="password" class="input" name="password" required>
+						</div>
+					</div>
+					<div class="input-div pass">
+						<div class="i">
+							<i class="fas fa-lock"></i>
+						</div>
+						<div class="div">
+							<h5>Confirm Password</h5>
+							<input type="password" class="input" name="confirm-password" required>
+						</div>
+					</div>
+				</div>
+				<a href="#" id="btn-login" class="right btn-login">Login Here</a>
+				<a href="#" id="btn-forgot" class="right btn-forgot">Forgot Password?</a>
+				<input type="submit" class="btn" value="Register">
+			</form>
+
+			<form action="index.html" id="form-forgot-password" class="form-ajax  hidden animated bounceIn">
+				<img src="img/undraw_forgot_password_gi2d.svg">
+				<h3 class="title">Forgot Password? </h3>
+				<div class="forgot">
+					<div class="input-div one">
+						<div class="i">
+							<i class="fas fa-envelope"></i>
+						</div>
+						<div class="div">
+							<h5>Email</h5>
+							<input type="text" class="input" name="email" required>
+						</div>
+					</div>
+				</div>
+				<a href="#" id="btn-register" class="right btn-register">Register Here</a>
+				<a href="#" id="btn-login" class="right btn-login"> Login Here</a>
+				<input type="submit" class="btn" value="Reset">
+			</form>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
+
 </html>
