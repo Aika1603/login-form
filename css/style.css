@@ -9,12 +9,27 @@ body{
     overflow: hidden;
 }
 
+a {
+	text-decoration: none;
+}
+
+
 .wave{
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	height: 100%;
+	width:30%;
 	z-index: -1;
+}
+
+.wave2{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 90%;
+	width:50%;
+	z-index: -10;
 }
 
 .container{
@@ -145,15 +160,15 @@ form{
 }
 
 .register {
-	height: auto;
-	padding-top:20px;
 	padding-bottom:20px;
 }
 
 .forgot {
-	height: auto;
-	padding-top:20px;
 	padding-bottom:20px;
+}
+
+.close-toast:active {
+	border:0px;
 }
 
 .input-div > div > input{
@@ -175,7 +190,7 @@ form{
 	margin-bottom: 4px;
 }
 
-a{
+a {
 	display: block;
 	/* text-align: right; */
 	text-decoration: none;
@@ -184,17 +199,27 @@ a{
 	transition: .3s;
 }
 
-.btn-save-me {
+a.btn-save-me {
 	font-size: 20px;
+	text-decoration: none;
 }
 
-.btn-register {
+a.btn-register {
 	margin-top:-20px;
+	text-decoration: none;
 }
 
-/* .btn-login {
-	margin-top:-20px;
-} */
+a.btn-login {
+	text-decoration: none;
+}
+
+a.btn-saveme {
+	text-decoration: none;
+}
+
+a.btn-forgot {
+	text-decoration: none;
+}
 
 a.left{
 	text-align: left;
@@ -265,12 +290,24 @@ a:hover{
 		position: fixed;
 		bottom: 0;
 		left: 0;
-		height: 30%;
+		height: 8%;
+		width: 125%;
 		z-index: -1;
 		/* display: none; */
 	}
 
+	.wave2{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		height: 15%;
+		width: 130%;
+		z-index: -10;
+		/* display: none; */
+	}
+
 	.login-content{
+		margin-top:-20px;
 		justify-content: center;
 	}
 }
